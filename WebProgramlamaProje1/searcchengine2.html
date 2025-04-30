@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>search in javascript</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+<style type="text/css">
+     /* Tüm elementler için varsayılan stil tanımlamaları */
+   *
+    {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    }
+   /* Body (gövde) için arkaplan rengi tanımlaması */
+    body
+    {
+    background:rgb(249, 227, 227);
+    }
+     /* container-fluid sınıfı için stil tanımlaması */
+    .container-fluid
+    {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 80px 0px;
+    }
+    /* container sınıfı için stil tanımlaması */
+    .container
+    {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    }
+    .container .search
+     /* search sınıfı için stil tanımlaması */
+    {
+    display: flex;
+    padding: 30px 0px;
+    justify-content: space-between;
+    
+    }
+    .container .search h1
+     /* h1 etiketi için stil tanımlaması */
+    {
+    letter-spacing: 3px;
+    display: inline-block;
+    border-bottom: 2px solid rgb(157, 31, 52);
+    padding-bottom: 10px;
+    }
+    .container .search input
+    /* input etiketi için stil tanımlaması */
+    {
+    width: 60%;
+    padding: 5px 16px;
+    background: transparent;
+    border: 1px solid #000;
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    outline: none;
+    }
+     /* recipe sınıfı içindeki img etiketi için stil tanımlaması */
+    .recipe img{
+        width: 270px;
+        height: 280px;
+    }
+    .container .search input::placeholder
+    /* input etiketi için placeholder stil tanımlaması */
+    {
+    color: rgb(157, 31, 52);
+    font-weight: 500;
+    }
+    /* recipe-list sınıfı için stil tanımlaması */
+    .container .recipe-list
+    {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    }
+     /* recipe sınıfı için stil tanımlaması */
+    .container .recipe-list .recipe
+    {
+    margin-top: 30px;
+    }
+    /* recipe sınıfı içindeki a etiketi için stil tanımlaması */
+    .container .recipe-list .recipe a
+    {
+    padding-top: 5px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    }
+     /* recipe sınıfı içindeki h4 etiketi için stil tanımlaması */
+    .container .recipe-list .recipe h4
+    {
+    padding: 3px 0px;
+    color: rgb(157, 31, 52);
+    font-weight: 700;
+    letter-spacing: 3px;
+    }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="container">
+<div class="search">
+<h1>Tariflerimiz</h1>
+<input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+</div>
+<div class="recipe-list">
+    <!-- Tarifler burada listelenecek -->
+<div class="recipe">
+<img src="cheesecake.jpg">
+<div><a href="tarifsayfa6.html">cheesecake</a></div>
+
+
+</div>
+<div class="recipe">
+<img src="cilekli-mois-pasta-2-600x600.jpg">
+<div><a href="tarifsayfa3.html">Mois Pasta</a></div>
+
+</div>
+<div class="recipe">
+<img src="dereotlu.webp">
+<div><a href="tarifsayfa12.html">Dereotlu Poğaça</a></div>
+
+</div>
+<div class="recipe">
+<img src="kremşanti.webp">
+<div><a href="tarifsayfa21.html">Krem Şanti</a></div>
+
+</div>
+<div class="recipe">
+<img src="salep.jpg">
+<div><a href="tarifsayfa17.html">Salep</a></div>
+
+</div>
+<div class="recipe">
+<img src="brownie.jpg">
+<div><a href="tarifsayfa4.html">Brownie</a></div>
+
+</div>
+<div class="recipe">
+<img src="rulopasta.jpg">
+<div><a href="tarifsayfa2.html">Rulo Pasta</a></div>
+
+</div>
+<div class="recipe">
+<img src="soğukkahve1.jpg">
+<div><a href="tarifsayfa19.html">Soğuk Kahve</a></div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- javascript -->
+<script type="text/javascript">
+    // Arama fonksiyonu
+function search() {
+    // Kullanıcının girdiği değeri alır ve büyük harfe çevirir
+let filter = document.getElementById('find').value.toUpperCase();
+ // Tüm tarifleri seçer
+let item = document.querySelectorAll('.recipe');
+ // Tüm bağlantı (link) elemanlarını seçer
+let l = document.getElementsByTagName('a');
+ // Bağlantı elemanlarını döngüyle gezer
+for(var i = 0;i<=l.length;i++){
+    // Her tarifin içindeki bağlantıyı alır
+let a=item[i].getElementsByTagName('a')[0];
+ // Bağlantı içindeki metin değerini alır
+let value=a.innerHTML || a.innerText || a.textContent;
+// Eğer bağlantı içindeki metin, arama filtresini içeriyorsa
+if(value.toUpperCase().indexOf(filter) > -1) {
+     // Tarif görünür durumda bırakılır
+item[i].style.display="";
+}
+else
+{
+    // Tarif gizlenir
+item[i].style.display="none";
+}
+}
+}
+</script>
+</body>
+</html>

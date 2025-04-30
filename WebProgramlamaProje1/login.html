@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Karakter setini belirtir -->
+  <meta charset="UTF-8">
+  <!-- Görüntüleme alanı ayarları, mobil uyumluluk için -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Sayfa başlığı -->
+  <title>Login</title>
+  <!-- Harici CSS dosyasını bağlar -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Giriş formu bölümü -->
+  <section>
+    <!-- Giriş formu -->
+    <form id="login-form">
+      <!-- Email girişi için input kutusu -->
+        <div class="inputbox">
+           <!-- Email ikonu -->
+            <ion-icon name="mail-outline"></ion-icon>
+            <!-- Email alanı -->
+            <input type="email" id="login-email" name="email" required>
+            <!-- Email alanı etiketi -->
+            <label for="">Email</label>
+        </div>
+         <!-- Şifre girişi için input kutusu -->
+        <div class="inputbox">
+          <!-- Şifre ikonu -->
+            <ion-icon name="lock-closed-outline"></ion-icon>
+             <!-- Şifre alanı -->
+            <input type="password" id="login-password" name="password" required>
+             <!-- Şifre alanı etiketi -->
+            <label for="">Password</label>
+        </div>
+         <!-- Giriş yap butonu -->
+        <button type="submit">Log In</button>
+           <!-- Kayıt olma linki -->
+        <div class="register">
+            <p><a href="signup.html">Sign Up</a></p>
+        </div>
+    </form>
+  </section>
+  <!-- Harici JavaScript dosyasını bağlar -->
+  <script src="script.js"></script>
+</body>
+</html>

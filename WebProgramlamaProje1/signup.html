@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Dış stil dosyalarının eklenmesi -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Ionicons simge kütüphanesinin eklenmesi -->
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" nomodule></script>
+</head>
+<body>
+    <section>
+        <!-- Kayıt formu -->
+        <form id="register-form" action="">
+            <div class="inputbox">
+                  <!-- Kullanıcı adı için simge ve giriş kutusu -->
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" id="register-username" name="name" required>
+                <label for="">Name</label>
+            </div>
+            <div class="inputbox">
+                <!-- E-posta için simge ve giriş kutusu -->
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" id="register-email" name="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                 <!-- Şifre için simge ve giriş kutusu -->
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="register-password" name="password" required>
+                <label for="">Password</label>
+            </div>
+              <!-- Kayıt ol butonu -->
+            <button type="submit">Sign Up</button>
+            <div class="register">
+                  <!-- Hesabı olan kullanıcılar için giriş sayfasına yönlendirme -->
+                <p>Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </form>
+    </section>
+    <!-- Harici JavaScript dosyasının eklenmesi -->
+    <script src="script.js"></script>
+</body>
+</html>
